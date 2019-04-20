@@ -6,37 +6,45 @@
     android:id="@+id/spinner"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:orientation="vertical"
-       android:layout_marginTop="15dp"
 
         >
 
         <Spinner
             android:id="@+id/spinner1"
-            android:layout_width="match_parent"
+            android:layout_width="340dp"
             android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
-            android:background="@color/colorAccent" />
+            android:layout_marginRight="6dp"
+
+            android:background="@drawable/round" />
 
         <Spinner
             android:id="@+id/spinner2"
-            android:layout_width="match_parent"
+            android:layout_width="340dp"
             android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
-            android:background="@color/colorAccent"/>
+            android:layout_marginRight="6dp"
+            android:background="@drawable/round" />
 
         <Spinner
             android:id="@+id/spinner3"
-            android:layout_width="match_parent"
+            android:layout_width="340dp"
             android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
-            android:background="@color/colorAccent" />
+            android:layout_marginRight="6dp"
+            android:background="@drawable/round" />
 
 
     </LinearLayout>
@@ -51,13 +59,14 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="186dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="200dp"
-        android:background="@color/colorAccent"
+        android:layout_width="158dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="105dp"
+        android:background="@drawable/round"
         android:onClick="get"
         android:text="Next"
+        android:textColor="@color/colorAccent"
 
-        android:textSize="40sp" />
+        android:textSize="30sp" />
 
 </LinearLayout>

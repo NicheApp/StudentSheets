@@ -1,6 +1,7 @@
 package com.example.studentsheets;
 import android.content.Intent;
 
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,22 +10,17 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
 
  public int position,position2,position3;
+ String link;
     public void get(View v) {
-openMain2Activity();
-
-
-
-
-
-
+        googleDrive();
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +35,7 @@ openMain2Activity();
         list.add("Electronics");
         list.add("Electrical");
         list.add("Mechanical");
-        list.add("Automobiles");
-        list.add("Aerospace");
-        list.add("Bio Technology");
+
         final List<String> list2 = new ArrayList<String>();
         list2.add("Select semester");
 
@@ -70,12 +64,7 @@ openMain2Activity();
                if(position>1) {
                    list2.add("Semester 1");
                    list2.add("Semester 2");
-                   list2.add("Semester 3");
-                   list2.add("Semester 4");
-                   list2.add("Semester 5");
-                   list2.add("Semester 6");
-                   list2.add("Semester 7");
-                   list2.add("Semester 8");
+
                }
 
 
@@ -93,22 +82,43 @@ openMain2Activity();
                 {
                     if(position==2) {
                         if (position2 == 2) {
+                            list3.clear();
+                            list3.add("Physics");
+                            list3.add("Maths");
+                            list3.add("Basic Electrical and Electronics");
+                            list3.add("Engineering Graphics");
+                            list3.add("English"); }
+                        if (position2 == 3) {
+                            list3.clear();
+                            list3.add("Chemistry");
+                            list3.add("Maths");
+                            list3.add("Programming for Problem solving");
+                            list3.add("language");
+
+                        }
+
+                    }
+
+                    if(position==3  || position==4 || position==5) {
+                        if (position2 == 2 ) {
+                            list3.clear();
+                            list3.add("Chemistry");
+                            list3.add("Maths");
+                            list3.add("Programming for Problem solving");
+                            list3.add("language");
+                            }
+                        if (position2 == 3) {
+                            list3.clear();
                             list3.add("Physics");
                             list3.add("Maths");
                             list3.add("Basic Electrical and Electronics");
                             list3.add("Engineering Graphics");
                             list3.add("English");
-                            list3.add("Constitution of India");
-                        }
-                        if (position2 == 3) {
-                            list3.add("Chemistry");
-                            list3.add("Maths");
-                            list3.add("Programming for Problem solving");
-                            list3.add("General aptitude");
-                            list3.add("Civil and Mechanical");
+
                         }
 
                     }
+
 
                 }
             }@Override
@@ -130,18 +140,83 @@ Log.i("THE",position + position2 + position3 +"");
     }
 
 
-public void openMain2Activity()
+
+public void  googleDrive()
+{
+    if(position==2)
     {
-        Intent intent =new Intent(this,Main2Activity.class);
-
-        intent.putExtra("this",position);
-        intent.putExtra("this2",position2);
-        intent.putExtra("this3",position3);
-
+        if(position2==2)
+        {
+            if(position3==1)
+            { link="https://drive.google.com/open?id=118WiWwjDgg6Mazn98hdgM51L4Y-lvaVW"; web(link);}
+            if(position3==2)
+            {link="https://drive.google.com/open?id=1-7QC0TfEQxavIVhwnLZ9Nod3WgMEwZdo";web(link);}
+            if(position3==3)
+            { link="https://drive.google.com/open?id=1-J9ovay13RLLovVoVnKed1REqEtFUP8m"; web(link);}
+            if(position3==4)
+            {link="https://drive.google.com/open?id=1-TN5yTHrEDw1Ba9ons7Fgz7QTV0Uju1I";web(link);}
+            if(position3==5)
+            { link="https://drive.google.com/open?id=1-Xi9PlThheGCUwdFzflygpSsOH-bNtNb"; web(link);}
+            if(position3==7)
+            {link="";web(link);}
+        }
+        if(position2==3)
+        {
+            if(position3==1)
+            { link="https://drive.google.com/open?id=1-jswOgEkXv-ET4M1E3yAO_1-ex2QtM6W"; web(link);}
+            if(position3==2)
+            {link="https://drive.google.com/open?id=1-lItIZTmgtm_xba-g3NbdLgtCyNRGNyr";web(link);}
+            if(position3==3)
+            { link="https://drive.google.com/open?id=1-baHW4vfTZQYsP0wMjcpKghTRyvOItRY"; web(link);}
+            if(position3==4)
+            {link="https://drive.google.com/open?id=1-r_FU4dfHK28544HWtVIPDN5oOPhXvTG";web(link);}
+            if(position3==5)
+            { link=""; web(link);}
+            if(position3==7)
+            {link="";web(link);}
+        }
+    }
+    if(position==3 || position==4 || position==5)
+    {
+        if(position2==3)
+        {
+            if(position3==1)
+            { link="https://drive.google.com/open?id=118WiWwjDgg6Mazn98hdgM51L4Y-lvaVW"; web(link);}
+            if(position3==2)
+            {link="https://drive.google.com/open?id=1-7QC0TfEQxavIVhwnLZ9Nod3WgMEwZdo";web(link);}
+            if(position3==3)
+            { link="https://drive.google.com/open?id=1-J9ovay13RLLovVoVnKed1REqEtFUP8m"; web(link);}
+            if(position3==4)
+            {link="https://drive.google.com/open?id=1-TN5yTHrEDw1Ba9ons7Fgz7QTV0Uju1I";web(link);}
+            if(position3==5)
+            { link="https://drive.google.com/open?id=1-Xi9PlThheGCUwdFzflygpSsOH-bNtNb"; web(link);}
+            if(position3==6)
+            {link="";web(link);}
+        }
+        if(position2==2)
+        {
+            if(position3==1)
+            { link="https://drive.google.com/open?id=1-jswOgEkXv-ET4M1E3yAO_1-ex2QtM6W"; web(link);}
+            if(position3==2)
+            {link="https://drive.google.com/open?id=1-lItIZTmgtm_xba-g3NbdLgtCyNRGNyr";web(link);}
+            if(position3==3)
+            { link="https://drive.google.com/open?id=1-baHW4vfTZQYsP0wMjcpKghTRyvOItRY"; web(link);}
+            if(position3==4)
+            {link="https://drive.google.com/open?id=1-r_FU4dfHK28544HWtVIPDN5oOPhXvTG";web(link);}
+            if(position3==5)
+            { link=""; web(link);}
+            if(position3==7)
+            {link="";web(link);}
+        }
+    }
+}
+    public void web(String a)
+    {
+        Uri uri = Uri.parse(link); // missing 'http://' will cause crashed
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
 
 
     }
-
 
 }
